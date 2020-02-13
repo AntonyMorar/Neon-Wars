@@ -10,6 +10,7 @@ public class SimpleBullet : MonoBehaviour
     {
         if (!collision.CompareTag("Player"))
         {
+            Debug.Log("OnTriggerEnter2D");
             //GameObject collitionEffect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             //Destroy(collitionEffect, 3f);
             Destroy(gameObject);

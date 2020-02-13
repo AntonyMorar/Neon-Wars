@@ -64,4 +64,20 @@ public class PlayerController : MonoBehaviour
             rb.rotation = Mathf.Lerp(rb.rotation, shipAngle, rotationInterpolation);
         }
     }
+
+    void DestroyPlayer()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            DestroyPlayer();
+            GameManager.instance.playerDiedGameRestarted = true;
+        }
+    }
+
+
 }

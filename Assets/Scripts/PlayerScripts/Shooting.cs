@@ -8,10 +8,10 @@ public class Shooting : MonoBehaviour
     public GameObject simpleBulletPrefab;
 
     [Header("Shoot Status")]
-    public float bulletForce = 20f;
+    public float bulletForce = 17f;
     public float fireRate = 0.1f; // This is roughly the number of times the ship can be fired in 1 second
-    [Range(0, 0.2f)]
-    public float shootSensibility = 0.14f;
+    [Range(0.1f, 1.1f)]
+    public float shootSensibility = 0.9f;
 
     [Header("Firepoint")]
     [Range (0,1)]
