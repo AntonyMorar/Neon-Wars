@@ -11,10 +11,35 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
     }
 
-    public int score;
-    public int lifeScore;
+    [Header("Player Status")]
+    public int score = 0;
+    public int lives = 4;
+    public int superPower = 3;
+    public int highScore;
 
-    public bool playerDiedGameRestarted;
+    [Header("Game Status")]
+    public int aliveEnemies;
+    public bool isDead;
+    private Dictionary<string, int> highScores;
+
+    private GameObject[] enemies;
+
+    void ResetGameStatus()
+    {
+        score = 0;
+        lives = 4;
+        superPower = 3;
+        enemies = null;
+    }
+
+    public void DestroyAllEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Enemy>().DestroyEnemy();
+        }
+    }
 
     private void MakeSingleton()
     {

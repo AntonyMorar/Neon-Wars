@@ -63,11 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EnemiesScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\GruntBehavior.cs" />
+    <Compile Include="Assets\Scripts\EnemiesScripts\SpinnerBehavior.cs" />
     <Compile Include="Assets\Scripts\OtherScripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\OtherScripts\SimpleBullet.cs" />
+    <Compile Include="Assets\Scripts\OtherScripts\Spawners.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\SimpleBullet.cs" />
+    <Compile Include="Assets\Scripts\UI\ParallaxSpace.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

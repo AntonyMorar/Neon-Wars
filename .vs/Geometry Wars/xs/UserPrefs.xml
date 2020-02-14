@@ -1,13 +1,21 @@
 ﻿<Properties StartupConfiguration="{8F6CC4C8-4216-9653-B4FA-18259B6467B6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemiesScripts/GruntBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemiesScripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerScripts/PlayerController.cs" Line="73" Column="1" />
-      <File FileName="Assets/Scripts/EnemiesScripts/GruntBehavior.cs" Line="44" Column="48" />
+      <File FileName="Assets/Scripts/UI/ParallaxSpace.cs" Line="23" Column="51" />
+      <File FileName="Assets/Scripts/OtherScripts/Spawners.cs" Line="15" Column="42" />
+      <File FileName="Assets/Scripts/EnemiesScripts/Enemy.cs" Line="8" Column="12" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Geometry Wars" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="acc039d0-828d-4c70-b1e0-04dc6cd68175" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0d918b61-3b98-4ce3-b642-37c78190f052" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

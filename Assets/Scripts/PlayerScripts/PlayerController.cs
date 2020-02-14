@@ -10,11 +10,17 @@ public class PlayerController : MonoBehaviour
     public float rotationInterpolation = 0.4f;
     [Range (0, 0.2f)]
     public float rotationSensibility = 0.085f;
+
+    [Header("Ship In Game")]
     public bool hasShield;
+    private bool itsMoving;
+
+    [Header("Ship Editors")]
+    public GameObject explotion;
+    public ParticleSystem sparks;
 
     private Rigidbody2D rb;
     private float shipAngle;
-    private bool moving;
     float xInput, yInput;
 
     void Start()
@@ -28,10 +34,16 @@ public class PlayerController : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
 
-        if (xInput >= rotationSensibility || xInput <= -rotationSensibility || yInput >= rotationSensibility || yInput <= -rotationSensibility)
-            moving = true;
+        if (xInput >= rotationSensibility || xInput <= -rotationSensibility || yInput >= rotationSensibility || yInput <= -rotationSensibility) {
+            itsMoving = true;
+            sparks.Play();
+        }
         else
-            moving = false;
+        {
+            itsMoving = false;
+            sparks.Stop();
+        }
+
     }
 
     private void FixedUpdate()
@@ -46,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 lookDir = new Vector2(-xInput, yInput);
 
-        if (moving)
+        if (itsMoving)
         {
             shipAngle = Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg;
         }
@@ -67,6 +79,10 @@ public class PlayerController : MonoBehaviour
 
     void DestroyPlayer()
     {
+        //Explotion particle system play
+        GameObject cloneExplotion = (GameObject)Instantiate(explotion, transform.position, Quaternion.identity);
+        Destroy(cloneExplotion, 0.8f);
+
         Destroy(gameObject);
     }
 
@@ -74,8 +90,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            GameManager.instance.isDead = true;
+            GameManager.instance.DestroyAllEnemies();
+
             DestroyPlayer();
-            GameManager.instance.playerDiedGameRestarted = true;
         }
     }
 
