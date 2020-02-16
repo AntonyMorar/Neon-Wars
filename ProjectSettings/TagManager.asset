@@ -7,6 +7,11 @@ TagManager:
   - Firepoint
   - Enemy
   - Bullet
+  - Shield
+  - Wall
+  - PauseMenu
+  - MainMenu
+  - GameOverMenu
   layers:
   - Default
   - TransparentFX
@@ -46,4 +51,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3553165697
+    locked: 0
+  - name: Menus
+    uniqueID: 492776091
     locked: 0

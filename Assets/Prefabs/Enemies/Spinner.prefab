@@ -151,7 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   enemyScore: 150
+  isRespawning: 0
+  respawnTime: 0.7
   explotion: {fileID: 7940600783051182690, guid: 31eb14323fbd14be5a4708514acbbcbc,
+    type: 3}
+  floatingPoints: {fileID: 8144943170478723723, guid: e63674d6ba4974102b8aa0eff687c19d,
     type: 3}
   isMini: 0
   spinnerPrefab: {fileID: 3731823433552769276, guid: 5536e540deabb43b8ab8b3b70af8ce42,

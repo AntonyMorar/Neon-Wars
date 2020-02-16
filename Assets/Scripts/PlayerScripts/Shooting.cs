@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
     [Header("Shoot Status")]
     public float bulletForce = 17f;
     public float fireRate = 0.1f; // This is roughly the number of times the ship can be fired in 1 second
-    [Range(0.1f, 1.1f)]
+    [Range(0.1f, 1f)]
     public float shootSensibility = 0.9f;
 
     [Header("Firepoint")]
@@ -29,6 +29,30 @@ public class Shooting : MonoBehaviour
     }
 
     void Update()
+    {
+        GetRightJoystickInput();
+
+        if (Input.GetKeyDown(0))
+        {
+            Debug.Log("A pressed");
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Calculate and apply the shoot angle
+        Vector2 shootDir = new Vector2(xInput, yInput);
+        if (movingFirepoint)
+        {
+            shootAngle = Mathf.Atan2(shootDir.x, shootDir.y) * Mathf.Rad2Deg;
+        }
+
+        firePoint.rotation = Quaternion.Euler(0, 0, shootAngle - 180f);
+        firePoint.position = transform.position + new Vector3(xInput, -yInput, 0) * firepoinOffset;
+
+    }
+
+    private void GetRightJoystickInput()
     {
         xInput = Input.GetAxis("RSHorizontal");
         yInput = Input.GetAxis("RSVertical");
@@ -51,27 +75,15 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        // Calculate and apply the shoot angle
-        Vector2 shootDir = new Vector2(xInput, yInput);
-        if (movingFirepoint)
-        {
-            shootAngle = Mathf.Atan2(shootDir.x, shootDir.y) * Mathf.Rad2Deg;
-        }
-        firePoint.rotation = Quaternion.Euler(0, 0, shootAngle - 180f);
-        firePoint.position = transform.position + new Vector3(xInput, -yInput, 0) * firepoinOffset;
-    }
-
     void Shoot()
     {
-        //Intanciate the buller
+        // Bullet sound
+        SoundManager.instance.PlaySound("FireNormal");
+
+        //Intanciate the bullet
         GameObject bullet = Instantiate(simpleBulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
         nextFire = fireRate;
-
-        //Todo: Remove when put the walls
-        Destroy(bullet, 1f);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSensibility = 0.085f;
 
     [Header("Ship In Game")]
+    public float shieldTime = 2f;
     public bool hasShield;
     private bool itsMoving;
 
@@ -20,12 +21,14 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem sparks;
 
     private Rigidbody2D rb;
+    private PolygonCollider2D playeColider;
     private float shipAngle;
     float xInput, yInput;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playeColider = GetComponent<PolygonCollider2D>();
     }
 
     void Update()
@@ -79,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
     void DestroyPlayer()
     {
+        // Play ShipExplode sound
+        SoundManager.instance.PlaySound("ShipExplode");
         //Explotion particle system play
         GameObject cloneExplotion = (GameObject)Instantiate(explotion, transform.position, Quaternion.identity);
         Destroy(cloneExplotion, 0.8f);
@@ -90,10 +95,17 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            GameManager.instance.lives -= 1;
             GameManager.instance.isDead = true;
             GameManager.instance.DestroyAllEnemies();
 
             DestroyPlayer();
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            // Play ShipHitwall Sound
+            SoundManager.instance.PlaySound("ShipHitwall");
         }
     }
 

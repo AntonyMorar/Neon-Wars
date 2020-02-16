@@ -1,25 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Status")]
-    public float speed = 2.5f;
-    public int enemyScore = 10;
     [SerializeField]
+    protected bool useInspectorParams;
+
+    [Header("Enemy Status")]
+    public float speed;
+    public int enemyScore;
     private bool isRespawning;
-    public float respawnTime = 0.7f;
+    public float respawnTime;
 
     [Header("Enemy Editors")]
     public GameObject explotion;
+    public GameObject floatingPoints;
 
     protected Rigidbody2D rb;
     private Transform playerTarget;
     private Vector2 movement;
     private PolygonCollider2D pCollider;
 
-    void Start()
+    protected virtual void Start()
     {
         //Obtiene el colider del objeto y lo desabilita
         pCollider = GetComponent<PolygonCollider2D>();
@@ -58,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            DestroyEnemy();
+            DestroyEnemy(true);
             SendToGameManager();
         } 
     }
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            DestroyEnemy();
+            DestroyEnemy(true);
             SendToGameManager();
         }
     }
@@ -85,19 +89,36 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void DestroyEnemy()
+    public virtual void DestroyEnemy(bool destroyByPlayer = false)
     {
         //Explotion particle system play
-        GameObject cloneExplotion = (GameObject)Instantiate(explotion, transform.position, Quaternion.identity);
+        GameObject cloneExplotion = Instantiate(explotion, transform.position, Quaternion.identity);
         Destroy(cloneExplotion, 0.8f);
 
+        //Intancia el score que da el enemigo si fue destruido por el jugador
+        if (destroyByPlayer)
+        {
+            //AddComponentMenu sound
+            SoundManager.instance.PlaySound("EnemyExplode");
+            //Add Floating points
+            PopFloatingPoints();
+        }
+
         Destroy(gameObject);
+    }
+
+    private void PopFloatingPoints()
+    {
+        GameObject cloneFloatingPoints = Instantiate(floatingPoints, transform.position, Quaternion.identity);
+        int totalEnemyScore = enemyScore * GameManager.instance.multiplier;
+        cloneFloatingPoints.transform.GetChild(0).GetComponent<TextMeshPro>().SetText(totalEnemyScore.ToString());
+        Destroy(cloneFloatingPoints, 1f);
     }
 
     void SendToGameManager()
     {
         //Add points to player score
         GameManager.instance.aliveEnemies -= 1;
-        GameManager.instance.score += enemyScore;
+        GameManager.instance.score += enemyScore * GameManager.instance.multiplier;
     }
 }

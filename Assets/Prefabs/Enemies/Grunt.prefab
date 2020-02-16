@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5393149714405392125}
   - component: {fileID: 5393149714405392122}
   - component: {fileID: 5393149714405392126}
+  - component: {fileID: 481579840}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Enemy
@@ -149,9 +150,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470abe5c729214dfaaacb209295ea892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  useInspectorParams: 0
+  speed: 5
   enemyScore: 50
-  isRespawning: 0
   respawnTime: 0.7
   explotion: {fileID: 3128123444218632009, guid: e751030a6f3a94ecdb4dbd4f53eb301a,
     type: 3}
+  floatingPoints: {fileID: 8144943170478723723, guid: e63674d6ba4974102b8aa0eff687c19d,
+    type: 3}
+--- !u!95 &481579840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393149714405392123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 510e408860af84940b910d10294a5eb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

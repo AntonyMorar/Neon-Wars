@@ -7,18 +7,19 @@ public class SpinnerBehavior : Enemy
     //[Header("Spinner Status")]
 
     [Header("Spinner In Game")]
+    [HideInInspector]
     public bool isMini;
 
     [Header("Spinner Editors")]
     public GameObject spinnerPrefab;
 
-    public override void DestroyEnemy()
+    public override void DestroyEnemy(bool destroyByPlayer = false)
     {
         if (!isMini)
         {
             Instantiate(spinnerPrefab, new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z), Quaternion.identity);
             Instantiate(spinnerPrefab, new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z), Quaternion.identity);
         }
-        base.DestroyEnemy();
+        base.DestroyEnemy(true);
     }
 }
