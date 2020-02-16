@@ -4,7 +4,7 @@
     public const int lives = 4;
     public const int superPower = 3;
     public const int multiplierInit = 1;
-    public const float playerRespawnTime = 2.2f;
+    public const float playerRespawnTime = 1.5f;
 
     // Multiplier
     public const int pointsForMultiplier2 = 1000;

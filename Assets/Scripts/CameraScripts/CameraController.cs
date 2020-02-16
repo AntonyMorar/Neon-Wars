@@ -20,7 +20,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vcam.Follow == null)
+        if (vcam.Follow == null && GameObject.Find("Player"))
+        {
+            AttatchPlayer();
+        }
+        else if (vcam.Follow == null)
         {
             DetachPlayer();
         }

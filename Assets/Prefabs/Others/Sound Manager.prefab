@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &424167849879107959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424167849879107957}
+  - component: {fileID: 424167849879107956}
+  m_Layer: 0
+  m_Name: Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &424167849879107957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424167849879107959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &424167849879107956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424167849879107959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1bd47d6913d43a3aacf3ad2107e27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GameSoundtrack
+    clip: {fileID: 8300000, guid: e599d6bb5617948d9b50b95da18256dc, type: 3}
+    volume: 0.2
+    loop: 1
+  - name: MenuSoundtrack
+    clip: {fileID: 8300000, guid: eed8f8f3c56bf47d5b8b391439bda668, type: 3}
+    volume: 0.2
+    loop: 1
+  - name: BulletHitwall
+    clip: {fileID: 8300000, guid: 1a16dba113bb24d588053e714a4925fd, type: 3}
+    volume: 0.8
+    loop: 0
+  - name: EnemySpawnBlue
+    clip: {fileID: 8300000, guid: 4c1484bdd93634d729b8626e70e1b3b5, type: 3}
+    volume: 0.24
+    loop: 0
+  - name: EnemyExplode
+    clip: {fileID: 8300000, guid: 9271658cc46bf4f9fb54f5d77ece3897, type: 3}
+    volume: 0.35
+    loop: 0
+  - name: FireNormal
+    clip: {fileID: 8300000, guid: 3b580a6d068584717bd6018d93332b08, type: 3}
+    volume: 0.15
+    loop: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 9c0d056a88c3348e8979f0ff279a9717, type: 3}
+    volume: 0.3
+    loop: 0
+  - name: GameStart
+    clip: {fileID: 8300000, guid: 6d3b4c222b08d4165b322ef9c80884df, type: 3}
+    volume: 0.17
+    loop: 0
+  - name: PlayerSpawn
+    clip: {fileID: 8300000, guid: 81f6387ddbc3948e8b535646b026a016, type: 3}
+    volume: 0.2
+    loop: 0
+  - name: ShipExplode
+    clip: {fileID: 8300000, guid: ef196873bd7f343439e06c51ab2407a7, type: 3}
+    volume: 0.75
+    loop: 0
+  - name: ShipHitwall
+    clip: {fileID: 8300000, guid: 964dec38e11db480a9a2d9ae15af7af6, type: 3}
+    volume: 0.87
+    loop: 0
+  - name: Multiplier
+    clip: {fileID: 8300000, guid: 8623bdc759e9e494c8e42d58f1781314, type: 3}
+    volume: 0.45
+    loop: 0

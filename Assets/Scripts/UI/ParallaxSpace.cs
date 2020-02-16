@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParallaxSpace : MonoBehaviour
 {
-    public Transform playerTarjet;
+    private Transform playerTarjet;
     public Transform cameraTarjet;
     public float offsetScale;
 
