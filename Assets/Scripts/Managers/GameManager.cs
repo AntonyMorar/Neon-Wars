@@ -13,8 +13,11 @@ public class GameManager : MonoBehaviour
     public int score;
     public int lives;
     public int superPower;
-    [Range(1,10)]
+    [Space(10)]
+    [Range(1,5)]
     public int multiplier;
+    public int scoreToMultiplier;
+    public bool multiplayerChanged;
     [HideInInspector]
     public int highScore;
 
@@ -66,15 +69,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //Revisa si el juego termino
-        if (lives <= 0)
-        {
-            //Game Over values
-            gameOver = true;
-            gameStart = false;
-        }
+        // Chwck if the game is over
+        GameOver();
+
         // Respawn al jugador despues de cierto tiempo
         spawnerMaster.RespawnPlayer();
+
+        //Revisa el multiplier
+        CheckMultiplier();
     }
 
     public void ResetGameStatus()
@@ -108,4 +110,46 @@ public class GameManager : MonoBehaviour
             highScore = score;
         }
     }
+
+    void CheckMultiplier()
+    {
+        if (scoreToMultiplier >= Constants.pointsForMultiplier2 && multiplier==1)
+        {
+            multiplier = 2;
+            multiplayerChanged = true;
+        }
+        else if (scoreToMultiplier >= Constants.pointsForMultiplier3 && multiplier == 2)
+        {
+            multiplier = 3;
+            multiplayerChanged = true;
+        }
+        else if (scoreToMultiplier >= Constants.pointsForMultiplier4 && multiplier == 3)
+        {
+            multiplier = 4;
+            multiplayerChanged = true;
+        }
+        else if (scoreToMultiplier >= Constants.pointsForMultiplier5 && multiplier == 4)
+        {
+            multiplier = 5;
+            multiplayerChanged = true;
+        }
+    }
+
+    void GameOver()
+    {
+        if (GameManager.instance.gameOver)
+        {
+            //Manage the UI when game is over
+            UIManager.instance.ShowGameOverMenu(true);
+            UIManager.instance.ShowFireworkParty(true);
+            // Change the BG music
+            soundManager.PlaySound("GameOver");
+            soundManager.PauseSound("GameSoundtrack");
+            soundManager.PlaySound("MenuSoundtrack");
+
+            //Make game over false
+            gameOver = false;
+        }
+    }
+
 }

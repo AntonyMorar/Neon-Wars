@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject scoreUI;
     public GameObject gameOverMenu;
     public GameObject mainMenu;
+    public GameObject fireworkParty;
 
     private void Awake()
     {
@@ -43,14 +44,18 @@ public class UIManager : MonoBehaviour
         {
             ShowGameOverMenu(false);
         }
+        if (!fireworkParty.activeSelf)
+        {
+            fireworkParty.SetActive(true);
+        }
+
+        //Active Firework party
+        ShowFireworkParty(true);
     }
 
     private void Update()
     {
-        if (GameManager.instance.gameOver)
-        {
-            ShowGameOverMenu(true);
-        }
+
     }
 
     public void ShowGameOverMenu(bool show = true)
@@ -66,5 +71,10 @@ public class UIManager : MonoBehaviour
     public void ShowScoreUI(bool show = true)
     {
         scoreUI.SetActive(show);
+    }
+
+    public void ShowFireworkParty(bool show = true)
+    {
+        fireworkParty.GetComponent<FireworkParty>().isActiveParty = show;
     }
 }

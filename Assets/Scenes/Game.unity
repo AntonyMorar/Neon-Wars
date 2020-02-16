@@ -906,7 +906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &173620119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ RectTransform:
   - {fileID: 492547132}
   - {fileID: 633612317}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1397,7 +1397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 94.899994}
+  m_AnchoredPosition: {x: 0, y: 94.8999}
   m_SizeDelta: {x: 289.8, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492547133
@@ -1616,7 +1616,7 @@ MonoBehaviour:
     loop: 1
   - name: MenuSoundtrack
     clip: {fileID: 8300000, guid: eed8f8f3c56bf47d5b8b391439bda668, type: 3}
-    volume: 0.25
+    volume: 0.2
     loop: 1
   - name: BulletHitwall
     clip: {fileID: 8300000, guid: 1a16dba113bb24d588053e714a4925fd, type: 3}
@@ -1624,11 +1624,11 @@ MonoBehaviour:
     loop: 0
   - name: EnemySpawnBlue
     clip: {fileID: 8300000, guid: 4c1484bdd93634d729b8626e70e1b3b5, type: 3}
-    volume: 0.35
+    volume: 0.2
     loop: 0
   - name: EnemyExplode
     clip: {fileID: 8300000, guid: 9271658cc46bf4f9fb54f5d77ece3897, type: 3}
-    volume: 0.3
+    volume: 0.35
     loop: 0
   - name: FireNormal
     clip: {fileID: 8300000, guid: 3b580a6d068584717bd6018d93332b08, type: 3}
@@ -1636,11 +1636,11 @@ MonoBehaviour:
     loop: 0
   - name: GameOver
     clip: {fileID: 8300000, guid: 9c0d056a88c3348e8979f0ff279a9717, type: 3}
-    volume: 0.4
+    volume: 0.3
     loop: 0
   - name: GameStart
     clip: {fileID: 8300000, guid: 6d3b4c222b08d4165b322ef9c80884df, type: 3}
-    volume: 0.4
+    volume: 0.17
     loop: 0
   - name: PlayerSpawn
     clip: {fileID: 8300000, guid: 81f6387ddbc3948e8b535646b026a016, type: 3}
@@ -1648,11 +1648,15 @@ MonoBehaviour:
     loop: 0
   - name: ShipExplode
     clip: {fileID: 8300000, guid: ef196873bd7f343439e06c51ab2407a7, type: 3}
-    volume: 0.7
+    volume: 0.75
     loop: 0
   - name: ShipHitwall
     clip: {fileID: 8300000, guid: 964dec38e11db480a9a2d9ae15af7af6, type: 3}
     volume: 0.87
+    loop: 0
+  - name: Multiplier
+    clip: {fileID: 8300000, guid: 8623bdc759e9e494c8e42d58f1781314, type: 3}
+    volume: 0.45
     loop: 0
 --- !u!4 &580748739
 Transform:
@@ -1666,7 +1670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594146017
 GameObject:
@@ -1814,7 +1818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 59.799927}
+  m_AnchoredPosition: {x: 0, y: 59.799805}
   m_SizeDelta: {x: 289.8, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633612318
@@ -2247,6 +2251,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825899837}
   m_CullTransparentMesh: 0
+--- !u!1 &850138363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850138365}
+  - component: {fileID: 850138364}
+  m_Layer: 0
+  m_Name: Firework Party
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &850138364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850138363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791921d7dc3a342afad47f09f0a0f2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActiveParty: 1
+  spawnChance: 3
+  explotionsPrefab:
+  - {fileID: 9100249115525644180, guid: f30db9673b7cd4df4ae383272413f341, type: 3}
+  - {fileID: 3128123444218632009, guid: e751030a6f3a94ecdb4dbd4f53eb301a, type: 3}
+  - {fileID: 7940600783051182690, guid: 31eb14323fbd14be5a4708514acbbcbc, type: 3}
+  - {fileID: 7970827016190839962, guid: c88d10882703e449abc6aad65cd814af, type: 3}
+--- !u!4 &850138365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850138363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880506706
 GameObject:
   m_ObjectHideFlags: 3
@@ -2584,7 +2638,7 @@ RectTransform:
   - {fileID: 1634740905}
   - {fileID: 1615011099}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3008,7 +3062,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 594146018}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533823268
 GameObject:
@@ -3894,7 +3948,7 @@ RectTransform:
   - {fileID: 229427880}
   - {fileID: 1738634954}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4048,7 +4102,7 @@ Transform:
   - {fileID: 144406713}
   - {fileID: 364196019}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1824453108
 MonoBehaviour:
@@ -4071,7 +4125,6 @@ MonoBehaviour:
   cameraVM: {fileID: 594146017}
   playerPrefab: {fileID: 3132775839834611759, guid: 0d5a0da3ee68f4439a6c021416868462,
     type: 3}
-  timeToRespawnPlayer: 2.5
   enemies:
   - {fileID: 5393149714405392123, guid: 183a8a029cba64569a2faed0aeb34721, type: 3}
   spawnParticles:
@@ -4140,7 +4193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997105348
 GameObject:
@@ -4184,7 +4237,7 @@ Transform:
   m_Children:
   - {fileID: 91704566}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022704581
 GameObject:
@@ -4346,7 +4399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2089645950
 MonoBehaviour:
@@ -4365,6 +4418,8 @@ MonoBehaviour:
   lives: 3
   superPower: 3
   multiplier: 1
+  scoreToMultiplier: 0
+  multiplayerChanged: 0
   highScore: 0
   aliveEnemies: 0
   isDead: 1
@@ -4385,6 +4440,7 @@ MonoBehaviour:
   scoreUI: {fileID: 954604164}
   gameOverMenu: {fileID: 1717915160}
   mainMenu: {fileID: 173620118}
+  fireworkParty: {fileID: 850138363}
 --- !u!1 &2130887889
 GameObject:
   m_ObjectHideFlags: 0

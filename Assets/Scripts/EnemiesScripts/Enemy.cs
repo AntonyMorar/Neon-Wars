@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Editors")]
     public GameObject explotion;
     public GameObject floatingPoints;
+    public GameObject floatingMultiplier;
 
     protected Rigidbody2D rb;
     private Transform playerTarget;
@@ -102,6 +103,10 @@ public class Enemy : MonoBehaviour
             SoundManager.instance.PlaySound("EnemyExplode");
             //Add Floating points
             PopFloatingPoints();
+            if (GameManager.instance.multiplayerChanged)
+            {
+                PopMultiplierPoints();
+            }
         }
 
         Destroy(gameObject);
@@ -115,10 +120,22 @@ public class Enemy : MonoBehaviour
         Destroy(cloneFloatingPoints, 1f);
     }
 
+    private void PopMultiplierPoints()
+    {
+        // Play Multiplier sound
+        SoundManager.instance.PlaySound("Multiplier");
+        //Instanciate the UI
+        GameObject cloneFloatingPoints = Instantiate(floatingMultiplier, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
+        cloneFloatingPoints.transform.GetChild(0).GetComponent<TextMeshPro>().SetText("MULTIPLIER X" + GameManager.instance.multiplier.ToString());
+        Destroy(cloneFloatingPoints, 1.3f);
+        GameManager.instance.multiplayerChanged = false;
+    }
+
     void SendToGameManager()
     {
         //Add points to player score
         GameManager.instance.aliveEnemies -= 1;
         GameManager.instance.score += enemyScore * GameManager.instance.multiplier;
+        GameManager.instance.scoreToMultiplier += enemyScore * GameManager.instance.multiplier;
     }
 }

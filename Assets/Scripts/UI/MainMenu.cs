@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
         //Change UI Canvas
         UIManager.instance.ShowMainMenu(false);
         UIManager.instance.ShowScoreUI(true);
+        UIManager.instance.ShowFireworkParty(false);
         // Change game master parameters
         GameManager.instance.gameStart = true;
     }

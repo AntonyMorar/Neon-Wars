@@ -149,13 +149,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738a0a9f617ac479391c5d7b2466e3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInspectorParams: 0
   speed: 2
   enemyScore: 150
-  isRespawning: 0
   respawnTime: 0.7
   explotion: {fileID: 7940600783051182690, guid: 31eb14323fbd14be5a4708514acbbcbc,
     type: 3}
   floatingPoints: {fileID: 8144943170478723723, guid: e63674d6ba4974102b8aa0eff687c19d,
+    type: 3}
+  floatingMultiplier: {fileID: 9138998436426087581, guid: 428e52109cdd34c81b8c2bcd2569314a,
     type: 3}
   isMini: 0
   spinnerPrefab: {fileID: 3731823433552769276, guid: 5536e540deabb43b8ab8b3b70af8ce42,

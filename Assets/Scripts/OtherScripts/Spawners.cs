@@ -68,7 +68,7 @@ public class Spawners : MonoBehaviour
             {
                 playerRespawnTime -= Time.deltaTime;
             }
-            else if (!GameManager.instance.gameOver)
+            else
             {
                 // Play player spawn sound
                 SoundManager.instance.PlaySound("PlayerSpawn");

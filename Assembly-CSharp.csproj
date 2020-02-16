@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Networking\Leaderboards.cs" />
     <Compile Include="Assets\Scripts\OtherScripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\OtherScripts\FireworkParty.cs" />
     <Compile Include="Assets\Scripts\OtherScripts\Spawners.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Shield.cs" />
@@ -136,9 +137,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

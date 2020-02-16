@@ -80,17 +80,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void DestroyPlayer()
-    {
-        // Play ShipExplode sound
-        SoundManager.instance.PlaySound("ShipExplode");
-        //Explotion particle system play
-        GameObject cloneExplotion = (GameObject)Instantiate(explotion, transform.position, Quaternion.identity);
-        Destroy(cloneExplotion, 0.8f);
-
-        Destroy(gameObject);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -107,6 +96,28 @@ public class PlayerController : MonoBehaviour
             // Play ShipHitwall Sound
             SoundManager.instance.PlaySound("ShipHitwall");
         }
+    }
+
+    void DestroyPlayer()
+    {
+        // Play ShipExplode sound
+        SoundManager.instance.PlaySound("ShipExplode");
+        //Explotion particle system play and destroy
+        GameObject cloneExplotion = (GameObject)Instantiate(explotion, transform.position, Quaternion.identity);
+        Destroy(cloneExplotion, 0.8f);
+        //Destry the player game object
+        Destroy(gameObject);
+
+        // Set true gameOver if the lives are over 
+        if (GameManager.instance.lives <= 0)
+        {
+            GameManager.instance.gameOver = true;
+            GameManager.instance.gameStart = false;
+        }
+
+        //Remove the score multiplayer
+        GameManager.instance.multiplier = 1;
+        GameManager.instance.scoreToMultiplier = 0;
     }
 
 
