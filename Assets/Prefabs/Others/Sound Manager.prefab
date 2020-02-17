@@ -62,7 +62,7 @@ MonoBehaviour:
     loop: 0
   - name: EnemyExplode
     clip: {fileID: 8300000, guid: 9271658cc46bf4f9fb54f5d77ece3897, type: 3}
-    volume: 0.35
+    volume: 0.25
     loop: 0
   - name: FireNormal
     clip: {fileID: 8300000, guid: 3b580a6d068584717bd6018d93332b08, type: 3}
@@ -99,4 +99,16 @@ MonoBehaviour:
   - name: EnemySpawnRed
     clip: {fileID: 8300000, guid: df7033410aa6042958b51f3e850e8925, type: 3}
     volume: 0.7
+    loop: 0
+  - name: ShieldHitEnemy
+    clip: {fileID: 8300000, guid: e3cfd72a1a93e4ecb8f16dda95906bde, type: 3}
+    volume: 0.25
+    loop: 0
+  - name: ShieldOn
+    clip: {fileID: 8300000, guid: fb28406c19786439bbcbf55c7b3bd5a9, type: 3}
+    volume: 0.4
+    loop: 0
+  - name: ShieldOff
+    clip: {fileID: 8300000, guid: 43a7d8ed19b434346812dd54e6a8cc22, type: 3}
+    volume: 0.3
     loop: 0

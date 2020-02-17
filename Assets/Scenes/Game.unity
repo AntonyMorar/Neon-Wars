@@ -908,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &173620119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336aec8b2770143138dd9b28124f84b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstButton: {fileID: 2060805977}
 --- !u!1 &229427879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,11 +1424,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.1830426, g: 0.254717, b: 0.073291205, a: 1}
-    m_HighlightedColor: {r: 0.99462265, g: 1, b: 0.9858491, a: 1}
+    m_HighlightedColor: {r: 0.8745098, g: 0.972549, b: 0.5803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 3.49
+    m_ColorMultiplier: 3.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -1601,11 +1602,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.1830426, g: 0.254717, b: 0.073291205, a: 1}
-    m_HighlightedColor: {r: 0.99462265, g: 1, b: 0.9858491, a: 1}
+    m_HighlightedColor: {r: 0.8745098, g: 0.972549, b: 0.5803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 3.49
+    m_ColorMultiplier: 3.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -1998,11 +1999,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.1830426, g: 0.254717, b: 0.073291205, a: 1}
-    m_HighlightedColor: {r: 0.99462265, g: 1, b: 0.9858491, a: 1}
+    m_HighlightedColor: {r: 0.8745098, g: 0.972549, b: 0.5803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 3.49
+    m_ColorMultiplier: 3.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -3699,6 +3700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 229427881}
+  firstButton: {fileID: 1738634953}
 --- !u!1 &1738634953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,7 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: -1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3758,11 +3760,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.1830426, g: 0.254717, b: 0.073291205, a: 1}
-    m_HighlightedColor: {r: 0.99462265, g: 1, b: 0.9858491, a: 1}
+    m_HighlightedColor: {r: 0.8745098, g: 0.972549, b: 0.5803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 3.49
+    m_ColorMultiplier: 3.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -4150,11 +4152,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.1830426, g: 0.254717, b: 0.073291205, a: 1}
-    m_HighlightedColor: {r: 0.99462265, g: 1, b: 0.9858491, a: 1}
+    m_HighlightedColor: {r: 0.8742991, g: 0.9716981, b: 0.5821022, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 3.49
+    m_ColorMultiplier: 3.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -4239,6 +4241,7 @@ MonoBehaviour:
   score: 0
   lives: 3
   superPower: 3
+  hasShieldInmunity: 0
   multiplier: 1
   scoreToMultiplier: 0
   multiplayerChanged: 0
@@ -4259,6 +4262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457c8871f61044de195f6d8eca46adf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1874366033}
   scoreUI: {fileID: 954604164}
   gameOverMenu: {fileID: 1717915160}
   mainMenu: {fileID: 173620118}
@@ -4650,56 +4654,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[14].name
-      value: ShieldHitEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[14].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e3cfd72a1a93e4ecb8f16dda95906bde, type: 3}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[14].volume
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[15].name
-      value: ShieldOn
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[15].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: fb28406c19786439bbcbf55c7b3bd5a9, type: 3}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[15].volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[16].name
-      value: ShieldOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[16].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 43a7d8ed19b434346812dd54e6a8cc22, type: 3}
-    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
-        type: 3}
-      propertyPath: sounds.Array.data[16].volume
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 424167849879107957, guid: 7049b8b842fa1404a8a7664797568658,
         type: 3}
       propertyPath: m_LocalPosition.x

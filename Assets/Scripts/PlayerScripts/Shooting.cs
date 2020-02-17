@@ -15,7 +15,7 @@ public class Shooting : MonoBehaviour
 
     [Header("Firepoint")]
     [Range (0,1)]
-    public float firepoinOffset = 0.1f;
+    public float firepoinOffset;
 
     private Transform firePoint;
     private float shootAngle;
@@ -48,8 +48,15 @@ public class Shooting : MonoBehaviour
         }
 
         firePoint.rotation = Quaternion.Euler(0, 0, shootAngle - 180f);
-        firePoint.position = transform.position + new Vector3(xInput, -yInput, 0) * firepoinOffset;
 
+        if (GameManager.instance.hasShieldInmunity)
+        {
+            firePoint.position = transform.position + new Vector3(xInput, -yInput, 0) * (firepoinOffset + 0.2f);
+        }
+        else
+        {
+            firePoint.position = transform.position + new Vector3(xInput, -yInput, 0) * firepoinOffset;
+        }
     }
 
     private void GetRightJoystickInput()

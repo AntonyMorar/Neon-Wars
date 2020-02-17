@@ -1,9 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject firstButton;
+
+    private void Start()
+    {
+        UIManager.instance.eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstButton;
+    }
+
     public void PlayGame()
     {
         //Game Satart Sound

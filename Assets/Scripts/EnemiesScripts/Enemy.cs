@@ -72,6 +72,11 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" || (collision.gameObject.tag == "Player" && GameManager.instance.hasShieldInmunity))
         {
+            if (GameManager.instance.hasShieldInmunity)
+            {
+                SoundManager.instance.PlaySound("ShieldHitEnemy");
+            }
+
             DestroyEnemy(true);
             SendToGameManager();
         }

@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameOverMenu : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public GameObject firstButton;
+
+    private void Start()
+    {
+        UIManager.instance.eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstButton;
+    }
 
     void Update()
     {

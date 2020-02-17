@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    [Header("Events")]
+    public GameObject eventSystem;
 
     [Header("Menu Status")]
     public GameObject scoreUI;
