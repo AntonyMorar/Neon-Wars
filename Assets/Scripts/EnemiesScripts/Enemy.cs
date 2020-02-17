@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         Vector3 direction = playerTarget.position - transform.position;
         direction.Normalize();
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         RespawnTimer();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         MoveEnemy(movement);
     }

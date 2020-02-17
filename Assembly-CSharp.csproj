@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\EnemiesScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\GruntBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\SpinnerBehavior.cs" />
+    <Compile Include="Assets\Scripts\EnemiesScripts\WeaverBehavior.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />

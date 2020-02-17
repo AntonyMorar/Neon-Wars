@@ -13,17 +13,25 @@ public class Spawners : MonoBehaviour
 
     [Header("Player Data")]
     public GameObject playerPrefab;
+    public GameObject spawnPlayerParticles;
     private float playerRespawnTime;
 
     [Header("Enemies Data")]
+
     public List<GameObject> enemies;
     public List<GameObject> spawnParticles;
 
-    static float inverseSpawnChance = Constants.inverseSpawnChance;
+    //Enemies
+    private int wave;
+    private float gruntSpawnChance;
+    private float weaverSpawnChance;
 
     private void Start()
     {
         playerRespawnTime = Constants.playerRespawnTime;
+        gruntSpawnChance = Constants.gruntSpawnChance;
+        weaverSpawnChance = Constants.weaverSpawnChance;
+        wave = 1;
     }
 
     private void Update()
@@ -38,26 +46,46 @@ public class Spawners : MonoBehaviour
 
     public void ResetSpawnChance()
     {
-        inverseSpawnChance = Constants.inverseSpawnChance;
+        gruntSpawnChance = Constants.gruntSpawnChance;
+        weaverSpawnChance = Constants.weaverSpawnChance;
     }
 
     void SpawnEnemies()
     {
         if (!GameManager.instance.isDead && GameManager.instance.gameStart)
         {
-            if (Random.Range(0, (int)inverseSpawnChance) == 0)
-            {
-                int randomNumberEnemy = Random.Range(0, enemies.Count);
-                GameObject enemyClone = Instantiate(enemies[randomNumberEnemy], enemySpawner[Random.Range(0, enemySpawner.Count)]);
-                //Sonido de Spawn enemigo
-                SoundManager.instance.PlaySound("EnemySpawnBlue");
-                //Cea y destruye particulas de la explosión
-                GameObject cloneExplotion = Instantiate(spawnParticles[randomNumberEnemy], enemyClone.transform);
-                Destroy(cloneExplotion, 1.5f);
-            }
-
-            if (inverseSpawnChance > 20) inverseSpawnChance -= 0.004f;
+            SpawnWavers();
         }
+    }
+
+    void SpawnGruntWave()
+    {
+        if (Random.Range(0, (int)gruntSpawnChance) == 0)
+        {
+            GameObject enemyClone = Instantiate(enemies[(int)Constants.enemies.GRUNT], enemySpawner[Random.Range(0, enemySpawner.Count)]);
+            //Sonido de Spawn enemigo
+            SoundManager.instance.PlaySound("EnemySpawnBlue");
+            //Cea y destruye particulas la creacion de jugador
+            GameObject cloneExplotion = Instantiate(spawnParticles[(int)Constants.enemies.GRUNT], enemyClone.transform);
+            Destroy(cloneExplotion, 1.5f);
+        }
+
+        if (gruntSpawnChance > 10) gruntSpawnChance -= 0.004f;
+    }
+
+    void SpawnWavers()
+    {
+        if (Random.Range(0, (int)weaverSpawnChance) == 0)
+        {
+            GameObject enemyClone = Instantiate(enemies[(int)Constants.enemies.WEAVER], enemySpawner[Random.Range(0, enemySpawner.Count)]);
+            //Sonido de Spawn enemigo
+            SoundManager.instance.PlaySound("EnemySpawnGreen");
+            //Cea y destruye particulas la creacion de jugador
+            GameObject cloneExplotion = Instantiate(spawnParticles[(int)Constants.enemies.WEAVER], enemyClone.transform);
+            Destroy(cloneExplotion, 1.5f);
+        }
+
+        if (weaverSpawnChance > 100) weaverSpawnChance -= 0.004f;
     }
 
     public void RespawnPlayer()
@@ -73,7 +101,11 @@ public class Spawners : MonoBehaviour
                 // Play player spawn sound
                 SoundManager.instance.PlaySound("PlayerSpawn");
                 //Instantiate the player
-                Instantiate(playerPrefab, playerSpawner);
+                GameObject playerClone = Instantiate(playerPrefab, playerSpawner);
+                // Agrega las particulas para respawn de jugador
+                GameObject spawnClone = Instantiate(spawnPlayerParticles, playerClone.transform);
+                Destroy(spawnClone, 2f);
+                //Hace link con la camara
                 cameraVM.GetComponent<CameraController>().AttatchPlayer();
                 playerRespawnTime = Constants.playerRespawnTime;
                 GameManager.instance.isDead = false;

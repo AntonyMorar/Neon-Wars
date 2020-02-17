@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         vcamBody.m_DeadZoneHeight = 0.22f;
         vcamBody.m_XDamping = 1f;
         vcamBody.m_YDamping = 1f;
-        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         vcam.Follow = player;
     }
 
