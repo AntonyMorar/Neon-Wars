@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniSpinner
       objectReference: {fileID: 0}
+    - target: {fileID: 4683403267970285686, guid: c136ca5c3a8d44a5e912c245b9a75fc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c136ca5c3a8d44a5e912c245b9a75fc4, type: 3}
 --- !u!1 &3731823433552769276 stripped

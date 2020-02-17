@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4699844611891446915}
   m_Layer: 0
   m_Name: Particles Orbit
-  m_TagString: Untagged
+  m_TagString: Vortex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4699844612029955639}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &4699844611891446916
 ParticleSystem:
@@ -4792,7 +4792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4699844612029955639}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!330 &4699844612013608051
 ParticleSystemForceField:
@@ -4804,10 +4804,10 @@ ParticleSystemForceField:
   m_Enabled: 1
   m_Parameters:
     m_Shape: 0
-    m_StartRange: 4.09
-    m_EndRange: 6.89
+    m_StartRange: 0.46
+    m_EndRange: 1.5
     m_Length: 1
-    m_GravityFocus: 0.7
+    m_GravityFocus: 0.41
     m_RotationRandomness: {x: 1, y: 1}
     m_DirectionCurveX:
       serializedVersion: 2
@@ -5316,8 +5316,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4699844612013608050}
   - {fileID: 4699844611891446914}
+  - {fileID: 4699844612013608050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

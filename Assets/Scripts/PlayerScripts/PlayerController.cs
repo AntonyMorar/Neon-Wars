@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "BH")
         {
             GameManager.instance.lives -= 1;
             GameManager.instance.isDead = true;

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraScripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\EnemiesScripts\BalckHoleBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\GruntBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemiesScripts\SpinnerBehavior.cs" />

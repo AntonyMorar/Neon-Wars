@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, int> highScores;
 
     private GameObject[] enemies;
+    private GameObject[] BHs;
 
     private void Awake()
     {
@@ -92,10 +94,22 @@ public class GameManager : MonoBehaviour
 
     public void DestroyAllEnemies()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
         {
-            enemy.GetComponent<Enemy>().DestroyEnemy();
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.GetComponent<Enemy>().DestroyEnemy();
+            }
+        }
+
+        if (GameObject.FindGameObjectsWithTag("BH").Length > 0)
+        {
+            BHs = GameObject.FindGameObjectsWithTag("BH");
+            foreach (GameObject BH in BHs)
+            {
+                BH.GetComponent<BalckHoleBehavior>().DestroyBH();
+            }
         }
         aliveEnemies = 0;
     }

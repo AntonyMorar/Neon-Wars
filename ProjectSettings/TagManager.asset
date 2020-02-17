@@ -12,6 +12,8 @@ TagManager:
   - PauseMenu
   - MainMenu
   - GameOverMenu
+  - BH
+  - Vortex
   layers:
   - Default
   - TransparentFX
@@ -21,10 +23,10 @@ TagManager:
   - UI
   - 
   - 
-  - Glow
+  - 
   - ParticleSystem
-  - 
-  - 
+  - Repulsion
+  - Atract
   - 
   - 
   - 

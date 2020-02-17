@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3132775839736056946}
   - component: {fileID: 3132775839736056941}
   - component: {fileID: 3132775839736056940}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4764,7 +4764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3132775839757134216}
   - component: {fileID: 3132775839757134219}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Firepoint
   m_TagString: Firepoint
   m_Icon: {fileID: 0}
@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 3132775839834611763}
   - component: {fileID: 3132775839834611762}
   - component: {fileID: 3132775839834611761}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
