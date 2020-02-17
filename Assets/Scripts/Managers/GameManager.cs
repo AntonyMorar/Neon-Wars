@@ -30,9 +30,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject[] enemies;
 
-    //Cache
-    private SoundManager soundManager;
-
     private void Awake()
     {
         MakeSingleton();
@@ -56,16 +53,9 @@ public class GameManager : MonoBehaviour
     {
         // Restart initial paramteres
         ResetGameStatus();
-
-        //Caching
-        soundManager = SoundManager.instance;
-        if (soundManager == null)
-        {
-            Debug.LogError("GameManager: No sound manager found in the scene");
-        }
-
-        soundManager.PlaySound("MenuSoundtrack");
+        StartCoroutine(PlayMenuSoundrack());
     }
+
 
     private void Update()
     {
@@ -73,10 +63,17 @@ public class GameManager : MonoBehaviour
         GameOver();
 
         // Respawn al jugador despues de cierto tiempo
+
         spawnerMaster.RespawnPlayer();
 
         //Revisa el multiplier
         CheckMultiplier();
+    }
+
+    IEnumerator PlayMenuSoundrack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SoundManager.instance.PlaySound("MenuSoundtrack");
     }
 
     public void ResetGameStatus()
@@ -143,9 +140,9 @@ public class GameManager : MonoBehaviour
             UIManager.instance.ShowGameOverMenu(true);
             UIManager.instance.ShowFireworkParty(true);
             // Change the BG music
-            soundManager.PlaySound("GameOver");
-            soundManager.PauseSound("GameSoundtrack");
-            soundManager.PlaySound("MenuSoundtrack");
+            SoundManager.instance.PlaySound("GameOver");
+            SoundManager.instance.PauseSound("GameSoundtrack");
+            SoundManager.instance.PlaySound("MenuSoundtrack");
 
             //Make game over false
             gameOver = false;

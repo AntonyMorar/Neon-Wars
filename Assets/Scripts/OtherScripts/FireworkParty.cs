@@ -22,6 +22,7 @@ public class FireworkParty : MonoBehaviour
         {
             //Explotion particle system play
             GameObject cloneExplotion = Instantiate(explotionsPrefab[randomExplotion], GetSpawnPosition(), Quaternion.identity);
+            cloneExplotion.transform.SetParent(transform);
             Destroy(cloneExplotion, 0.8f);
         }
     }

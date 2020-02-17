@@ -48,7 +48,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e599d6bb5617948d9b50b95da18256dc, type: 3}
     volume: 0.2
     loop: 1
-  - name: MenuSoundtrack
+  - name: MainSoundtrack
     clip: {fileID: 8300000, guid: eed8f8f3c56bf47d5b8b391439bda668, type: 3}
     volume: 0.2
     loop: 1

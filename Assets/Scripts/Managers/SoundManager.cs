@@ -8,7 +8,7 @@ public class Sound
 
     [Range(0,1)]
     public float volume = 0.7f;
-    public bool loop = false;
+    public bool loop;
 
     private AudioSource source;
 
@@ -93,6 +93,7 @@ public class SoundManager : MonoBehaviour
         }
 
         //No sound with name
-        Debug.LogError("SoundManager: No sound with name " + _name);
+         Debug.LogError("SoundManager: No sound with name " + _name);
     }
 }
+ 
