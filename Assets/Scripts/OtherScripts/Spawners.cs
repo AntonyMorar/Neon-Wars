@@ -58,7 +58,7 @@ public class Spawners : MonoBehaviour
     {
         if (!GameManager.instance.isDead && GameManager.instance.gameStart)
         {
-            SpawnBH();
+            SpawnWavers();
         }
     }
 
@@ -70,8 +70,8 @@ public class Spawners : MonoBehaviour
             //Sonido de Spawn enemigo
             SoundManager.instance.PlaySound("EnemySpawnBlue");
             //Cea y destruye particulas la creacion de jugador
-            GameObject cloneExplotion = Instantiate(spawnParticles[(int)Constants.enemies.GRUNT], enemyClone.transform);
-            Destroy(cloneExplotion, 1.5f);
+            GameObject cloneSpawn = Instantiate(spawnParticles[(int)Constants.enemies.GRUNT], enemyClone.transform);
+            Destroy(cloneSpawn, 1.5f);
         }
 
         if (gruntSpawnChance > 10) gruntSpawnChance -= 0.004f;
@@ -85,8 +85,8 @@ public class Spawners : MonoBehaviour
             //Sonido de Spawn enemigo
             SoundManager.instance.PlaySound("EnemySpawnGreen");
             //Cea y destruye particulas la creacion de jugador
-            GameObject cloneExplotion = Instantiate(spawnParticles[(int)Constants.enemies.WEAVER], enemyClone.transform);
-            Destroy(cloneExplotion, 1.5f);
+            GameObject cloneSpawn = Instantiate(spawnParticles[(int)Constants.enemies.WEAVER], enemyClone.transform);
+            Destroy(cloneSpawn, 1.5f);
         }
 
         if (weaverSpawnChance > 100) weaverSpawnChance -= 0.004f;
@@ -104,8 +104,8 @@ public class Spawners : MonoBehaviour
                 //Sonido de Spawn enemigo
                 SoundManager.instance.PlaySound("EnemySpawnRed");
                 //Cea y destruye particulas la creacion de jugador
-                GameObject cloneExplotion = Instantiate(spawnParticles[(int)Constants.enemies.BH], enemyClone.transform);
-                Destroy(cloneExplotion, 1.5f);
+                GameObject cloneSpawn = Instantiate(spawnParticles[(int)Constants.enemies.BH], enemyClone.transform);
+                Destroy(cloneSpawn, 1.5f);
             }
         }
     }
@@ -131,6 +131,7 @@ public class Spawners : MonoBehaviour
                 cameraVM.GetComponent<CameraController>().AttatchPlayer();
                 playerRespawnTime = Constants.playerRespawnTime;
                 GameManager.instance.isDead = false;
+                playerClone.GetComponent<PlayerController>().activeShield = true;
             }
         }
     }

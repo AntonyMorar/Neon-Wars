@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3989145036516901596}
   - component: {fileID: 9044383987246559078}
   - component: {fileID: 560250513280894600}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Weaver
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -191,5 +191,4 @@ MonoBehaviour:
     type: 3}
   floatingMultiplier: {fileID: 9138998436426087581, guid: 428e52109cdd34c81b8c2bcd2569314a,
     type: 3}
-  lookRadius: 1.3
   bullets: []

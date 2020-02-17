@@ -4999,7 +4999,8 @@ MonoBehaviour:
   shipSpeed: 250
   rotationInterpolation: 0.4
   rotationSensibility: 0.085
-  shieldTime: 1.5
+  shield: {fileID: 329902585739126242, guid: d3818f5a3ceea4094a3f128fe663ccef, type: 3}
+  shieldTime: 1.95
   hasShield: 0
   explotion: {fileID: 9100249115525644180, guid: f30db9673b7cd4df4ae383272413f341,
     type: 3}

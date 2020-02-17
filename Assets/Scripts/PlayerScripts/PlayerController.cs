@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     public float rotationSensibility = 0.085f;
 
     [Header("Ship In Game")]
-    public float shieldTime = 2f;
-    public bool hasShield;
+    public GameObject shield;
+    public float shieldTime = 1.95f;
+    public bool activeShield;
     private bool itsMoving;
 
     [Header("Ship Editors")]
@@ -46,6 +47,8 @@ public class PlayerController : MonoBehaviour
             itsMoving = false;
             sparks.Stop();
         }
+
+        CheckShied();
 
     }
 
@@ -82,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "BH")
+        if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "BH") && !GameManager.instance.hasShieldInmunity)
         {
             GameManager.instance.lives -= 1;
             GameManager.instance.isDead = true;
@@ -97,6 +100,44 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.PlaySound("ShipHitwall");
         }
     }
+
+    void CheckShied()
+    {
+        if (activeShield)
+        {
+            GameManager.instance.hasShieldInmunity = true;
+            activeShield = false;
+            // Active the shield
+            StartCoroutine(ActiveShield());
+        }
+    }
+
+    IEnumerator ActiveShield()
+    {
+        yield return new WaitForSeconds(0.8f);
+        SoundManager.instance.PlaySound("ShieldOn");
+        GameObject cloneShield = Instantiate(shield, transform.position, Quaternion.identity);
+        cloneShield.transform.SetParent(transform);
+        StartCoroutine(DestroyShield(cloneShield));
+    }
+
+    IEnumerator DestroyShield(GameObject _shield)
+    {
+        yield return new WaitForSeconds(1.9f);
+        SoundManager.instance.PlaySound("ShieldOff");
+        yield return new WaitForSeconds(.26f);
+        SoundManager.instance.PlaySound("ShieldOff");
+        yield return new WaitForSeconds(.24f);
+        SoundManager.instance.PlaySound("ShieldOff");
+        yield return new WaitForSeconds(.24f);
+        SoundManager.instance.PlaySound("ShieldOff");
+        yield return new WaitForSeconds(.24f);
+        SoundManager.instance.PlaySound("ShieldOff");
+        yield return new WaitForSeconds(0.12f);
+        Destroy(_shield);
+        GameManager.instance.hasShieldInmunity = false;
+    }
+
 
     void DestroyPlayer()
     {

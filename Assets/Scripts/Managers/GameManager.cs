@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public int lives;
     public int superPower;
+    public bool hasShieldInmunity;
     [Space(10)]
     [Range(1,5)]
     public int multiplier;

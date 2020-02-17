@@ -986,7 +986,7 @@ RectTransform:
   - {fileID: 492547132}
   - {fileID: 633612317}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3916,7 +3916,7 @@ MonoBehaviour:
   spawnParticles:
   - {fileID: 4038874390961562416, guid: 0bb647250e74d42d484695b94ee08ded, type: 3}
   - {fileID: 4038874390961562416, guid: 7be9c3d0565a14cfcba80ddf1abea208, type: 3}
-  - {fileID: 85650783484319440, guid: 20f52235e0d6a4368878264930c87f48, type: 3}
+  - {fileID: 6406994064756177819, guid: 20f52235e0d6a4368878264930c87f48, type: 3}
 --- !u!1 &1834781921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4650,6 +4650,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[14].name
+      value: ShieldHitEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e3cfd72a1a93e4ecb8f16dda95906bde, type: 3}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[14].volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[15].name
+      value: ShieldOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[15].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb28406c19786439bbcbf55c7b3bd5a9, type: 3}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[15].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[16].name
+      value: ShieldOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 43a7d8ed19b434346812dd54e6a8cc22, type: 3}
+    - target: {fileID: 424167849879107956, guid: 7049b8b842fa1404a8a7664797568658,
+        type: 3}
+      propertyPath: sounds.Array.data[16].volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 424167849879107957, guid: 7049b8b842fa1404a8a7664797568658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4688,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 424167849879107957, guid: 7049b8b842fa1404a8a7664797568658,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 424167849879107957, guid: 7049b8b842fa1404a8a7664797568658,
         type: 3}
