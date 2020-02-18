@@ -1005,7 +1005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336aec8b2770143138dd9b28124f84b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstButton: {fileID: 2060805977}
 --- !u!1 &229427879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,7 +3699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 229427881}
-  firstButton: {fileID: 1738634953}
 --- !u!1 &1738634953
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,7 +4000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2060805977}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1874366036
@@ -4267,6 +4265,8 @@ MonoBehaviour:
   gameOverMenu: {fileID: 1717915160}
   mainMenu: {fileID: 173620118}
   fireworkParty: {fileID: 850138363}
+  firstButtonMainMenu: {fileID: 2060805977}
+  firstButtonGameOver: {fileID: 1738634953}
 --- !u!1 &2124880351
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,12 @@ public class UIManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject fireworkParty;
 
+    [Header("First Menu Buttons")]
+    public GameObject firstButtonMainMenu;
+    public GameObject firstButtonGameOver;
+
+    private GameObject currenSelected;
+
     private void Awake()
     {
         MakeSingleton();
@@ -35,6 +41,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        //Active main menu and deactive other menus
         if (!mainMenu.activeSelf)
         {
             ShowMainMenu(true);
@@ -52,23 +59,46 @@ public class UIManager : MonoBehaviour
             fireworkParty.SetActive(true);
         }
 
+        if (eventSystem.GetComponent<EventSystem>().firstSelectedGameObject == null)
+        {
+            eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstButtonMainMenu;
+            currenSelected = firstButtonMainMenu;
+        }
+        else
+        {
+            currenSelected = firstButtonMainMenu;
+        }
+
         //Active Firework party
         ShowFireworkParty(true);
     }
 
     private void Update()
     {
-
-    }
-
-    public void ShowGameOverMenu(bool show = true)
-    {
-        gameOverMenu.SetActive(show);
+        if (currenSelected != eventSystem.GetComponent<EventSystem>().currentSelectedGameObject)
+        {
+            SoundManager.instance.PlaySound("UIChange");
+            currenSelected = eventSystem.GetComponent<EventSystem>().currentSelectedGameObject;
+        }
     }
 
     public void ShowMainMenu(bool show = true)
     {
         mainMenu.SetActive(show);
+        if (show)
+        {
+
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstButtonMainMenu);
+        }
+    }
+
+    public void ShowGameOverMenu(bool show = true)
+    {
+        gameOverMenu.SetActive(show);
+        if (show)
+        {
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstButtonGameOver);
+        }
     }
 
     public void ShowScoreUI(bool show = true)

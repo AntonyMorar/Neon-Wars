@@ -5,15 +5,10 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject firstButton;
-
-    private void Start()
-    {
-        UIManager.instance.eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstButton;
-    }
-
     public void PlayGame()
     {
+        //Click Sound
+        SoundManager.instance.PlaySound("UIConfirm");
         //Game Satart Sound
         SoundManager.instance.PlaySound("GameStart");
         //Change music

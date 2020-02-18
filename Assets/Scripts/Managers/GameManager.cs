@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        if (GameManager.instance.gameOver)
+        if (gameOver)
         {
             //Manage the UI when game is over
             UIManager.instance.ShowGameOverMenu(true);

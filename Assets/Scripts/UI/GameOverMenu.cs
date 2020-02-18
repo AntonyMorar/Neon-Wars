@@ -7,12 +7,6 @@ using UnityEngine.EventSystems;
 public class GameOverMenu : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public GameObject firstButton;
-
-    private void Start()
-    {
-        UIManager.instance.eventSystem.GetComponent<EventSystem>().firstSelectedGameObject = firstButton;
-    }
 
     void Update()
     {
@@ -21,6 +15,8 @@ public class GameOverMenu : MonoBehaviour
 
     public void GoMainMenu()
     {
+        //Click Sound
+        SoundManager.instance.PlaySound("UIConfirm");
         //Resete enemies spawn chance and game status
         GameManager.instance.ResetGameStatus();
 

@@ -112,3 +112,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 43a7d8ed19b434346812dd54e6a8cc22, type: 3}
     volume: 0.3
     loop: 0
+  - name: UIChange
+    clip: {fileID: 8300000, guid: 0084d542448c9434fbb6be9b6bfb9792, type: 3}
+    volume: 0.25
+    loop: 0
+  - name: UIConfirm
+    clip: {fileID: 8300000, guid: 1394db1cc89bf40c4ae1415f6f3d43b1, type: 3}
+    volume: 0.35
+    loop: 0
+  - name: UIDelete
+    clip: {fileID: 8300000, guid: 760cc721513504560b3faab35410538e, type: 3}
+    volume: 0.25
+    loop: 0
