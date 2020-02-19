@@ -122,5 +122,5 @@ MonoBehaviour:
     loop: 0
   - name: UIDelete
     clip: {fileID: 8300000, guid: 760cc721513504560b3faab35410538e, type: 3}
-    volume: 0.25
+    volume: 0.3
     loop: 0

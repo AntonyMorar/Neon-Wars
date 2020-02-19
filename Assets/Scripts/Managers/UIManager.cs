@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [Header("Menu Canvas")]
     public GameObject scoreUI;
     public GameObject gameOverMenu;
+    public GameObject leaderboardsMenu;
     public GameObject mainMenu;
     public GameObject controlsMenu;
     public GameObject creditsMenu;
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
     [Header("First Menu Buttons")]
     public GameObject firstButtonMainMenu;
     public GameObject firstButtonGameOver;
+    public GameObject firstButtonLeaderboards;
     public GameObject firstButtonControls;
     public GameObject firstButtonCredits;
 
@@ -60,6 +62,12 @@ public class UIManager : MonoBehaviour
         {
             ShowGameOverMenu(false);
         }
+
+        if (leaderboardsMenu.activeSelf)
+        {
+            
+        }
+
         if (controlsMenu.activeSelf)
         {
             ShowControlsMenu(false);
@@ -68,6 +76,7 @@ public class UIManager : MonoBehaviour
         {
             ShowCreditsMenu(false);
         }
+
         if (!fireworkParty.activeSelf)
         {
             fireworkParty.SetActive(true);
@@ -117,6 +126,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ShowLeaderboardsMenu(bool show = true)
+    {
+        leaderboardsMenu.SetActive(show);
+        if (show)
+        {
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(firstButtonLeaderboards);
+        }
+    }
+
     public void ShowControlsMenu(bool show = true)
     {
         controlsMenu.SetActive(show);
@@ -155,6 +173,7 @@ public class UIManager : MonoBehaviour
         ShowGameOverMenu(false);
         ShowCreditsMenu(false);
         ShowControlsMenu(false);
+        ShowLeaderboardsMenu(false);
         ShowScoreUI(false);
         ShowMainMenu(true);
     }
@@ -174,5 +193,18 @@ public class UIManager : MonoBehaviour
         SoundManager.instance.PlaySound("UIConfirm");
         ShowMainMenu(false);
         ShowControlsMenu(true);
+    }
+
+    public void GoLeaderboards()
+    {
+        //Click Sound
+        SoundManager.instance.PlaySound("UIConfirm");
+        ShowMainMenu(false);
+        ShowControlsMenu(true);
+    }
+
+    public void UIErrorClick()
+    {
+        SoundManager.instance.PlaySound("UIDelete");
     }
 }
