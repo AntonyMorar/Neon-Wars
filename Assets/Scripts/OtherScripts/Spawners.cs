@@ -58,7 +58,9 @@ public class Spawners : MonoBehaviour
     {
         if (!GameManager.instance.isDead && GameManager.instance.gameStart)
         {
+            SpawnGruntWave();
             SpawnWavers();
+            SpawnBH();
         }
     }
 
@@ -74,7 +76,7 @@ public class Spawners : MonoBehaviour
             Destroy(cloneSpawn, 1.5f);
         }
 
-        if (gruntSpawnChance > 10) gruntSpawnChance -= 0.004f;
+        if (gruntSpawnChance > 25) gruntSpawnChance -= 0.004f;
     }
 
     void SpawnWavers()
@@ -89,7 +91,7 @@ public class Spawners : MonoBehaviour
             Destroy(cloneSpawn, 1.5f);
         }
 
-        if (weaverSpawnChance > 100) weaverSpawnChance -= 0.004f;
+        if (weaverSpawnChance > 50) weaverSpawnChance -= 0.004f;
     }
 
     void SpawnBH()
@@ -105,9 +107,12 @@ public class Spawners : MonoBehaviour
                 SoundManager.instance.PlaySound("EnemySpawnRed");
                 //Cea y destruye particulas la creacion de jugador
                 GameObject cloneSpawn = Instantiate(spawnParticles[(int)Constants.enemies.BH], enemyClone.transform);
+                cloneSpawn.transform.SetParent(enemyClone.transform);
                 Destroy(cloneSpawn, 1.5f);
             }
         }
+
+        if (BHSpawnChance > 450) BHSpawnChance -= 0.004f;
     }
 
     public void RespawnPlayer()

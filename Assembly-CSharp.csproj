@@ -125,8 +125,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -139,12 +145,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>/Users/antony999k/Documents/ProyectosVideojuegos/Geometry Wars/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4038874390961562418}
   - component: {fileID: 4038874390961562419}
   m_Layer: 0
-  m_Name: GruntRespawn
+  m_Name: Weaver Respawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4767,7 +4767,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a350ad74d17a4f359473af3d1262c2f, type: 2}
+  - {fileID: 2100000, guid: 420b48f04caae4f9b92d1fc01d655ff3, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

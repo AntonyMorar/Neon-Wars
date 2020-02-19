@@ -19,17 +19,17 @@
     public const float gruntSpeed = 3.1f;
     public const int gruntScore = 50;
     public const float gruntRespawnTime = 0.7f;
-    public const float gruntSpawnChance = 50f;
+    public const float gruntSpawnChance = 65f;
 
     // Weaver
     public const float weaverSpeed = 2.4f;
     public const int weaverScore = 150;
     public const float weaverRespawnTime = 0.8f;
-    public const float weaverSpawnChance = 20f;
+    public const float weaverSpawnChance = 150f;
 
     // Black Hole
     public const int BHlives = 4;
     public const int BHScore = 400;
     public const float BHRespawnTime = 1f;
-    public const float BHSpawnChance = 800;
+    public const float BHSpawnChance = 750f;
 }
